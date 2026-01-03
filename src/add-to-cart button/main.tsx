@@ -2,8 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { AddToCartButton } from "./AddToCartButton.tsx";
 
-createRoot(document.getElementById("add-to-cart-button")!).render(
+const addToCartRoot=document.getElementById("add-to-cart-button");
+if(addToCartRoot){
+  const variantId=addToCartRoot.dataset.variantId;
+  const productTitle=addToCartRoot.dataset.productTitle;
+if(variantId&& productTitle){
+createRoot(addToCartRoot!).render(
   <StrictMode>
-    <AddToCartButton />
+    <AddToCartButton variantId={parseInt(variantId)} productTitle={productTitle} />
   </StrictMode>
 );
+}
+}

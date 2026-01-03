@@ -16,7 +16,7 @@ declare global {
   }
 
   interface Theme {
-    translations: Record<string, string>;
+    translations: Record<string, string>;F
     placeholders: {
       general: string[];
       product: string[];
